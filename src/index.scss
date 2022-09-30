@@ -1,6 +1,7 @@
 :root {
   --ls-white: #f4f4f4;
   --ls-dark: #151515;
+  --ls-grey: #c4c4c4;
   --select-border: #777;
   --select-focus: blue;
   --select-arrow: var(--select-border);
@@ -12,6 +13,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
 }
 
 body {
@@ -125,9 +130,16 @@ body {
   }
 }
 
+.area-title {
+  margin: 2rem 0;
+  text-align: center;
+}
+
 .selection {
   width: 100%;
   background-color: var(--ls-white);
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
 
   &.active {
     background-color: var(--ls-dark);
@@ -234,7 +246,7 @@ select {
 
 .search-form {
 	position: relative;
-	display: none;
+	display: flex;
 	width: 25%;
 	flex-wrap: wrap;
 	align-items: stretch;
@@ -293,12 +305,6 @@ select {
   }
 }
 
-@media (min-width: 768px) {
-	.search-form {
-		display: flex;
-	}
-}
-
 .container {
   min-height: calc(100vh - 3.125rem);
   background-color: var(--ls-white);
@@ -316,6 +322,7 @@ select {
     height: 50vh;
     padding: 3.125rem;
     background-color: tomato;
+    margin-bottom: 2rem;
   }
 
   &-title {
@@ -354,6 +361,18 @@ select {
   &-wrapper {
     position: relative;
     overflow: hidden;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-button {
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
   }
 
   &__item {
@@ -434,12 +453,6 @@ select {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 940px) {
-  .menu-container {
-    display: none;
-  }
-}
-
 .separator {
   color: var(--ls-dark);
   margin-top: 3rem;
@@ -506,3 +519,129 @@ select {
     }
   }
 }
+
+.video-container {
+  background-color: var(--ls-white);
+  max-width: 1200px;
+  margin: 6.25rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.25rem;
+
+  .main-video-container {
+    flex: 1 1 43.75rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background-color: var(--ls-white);
+    padding: 0.9375rem;
+
+    .main-video {
+      margin-bottom: 0.4375rem;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    .main-video-title {
+      font-size: 1.25rem;
+      color: var(--ls-dark);
+    }
+  }
+
+  .video-list-container {
+    flex: 1 1 21.875rem;
+    height: 30.3125rem;
+    overflow-y: scroll;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background-color: #fff;
+    padding: 0.9375rem;
+
+    &::-webkit-scrollbar {
+      width: 0.625rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: var(--ls-white);
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--ls-grey);
+      border-radius: 5px;
+    }
+
+    .list {
+      display: flex;
+      align-items: center;
+      gap: 0.9375rem;
+      padding: 0.625rem;
+      background-color: var(--ls-white);
+      cursor: pointer;
+      border-radius: 5px;
+      margin-bottom: 0.625rem;
+
+      &.active {
+        background-color: var(--ls-grey);
+
+        .list-title {
+          color: var(--ls-white);
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .list-video {
+        width: 6.25rem;
+        border-radius: 5px;
+      }
+
+      .list-title {
+        font-size: 1.0625rem;
+        color: var(--ls-dark);
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .video-container {
+    margin: 0;
+  }
+}
+
+@media (max-width: 940px) {
+  .menu-container {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+	.search-form {
+		display: none;
+	}
+}
+
+@media (max-width: 450px) {
+  .video-container .main-video-container .main-video-title {
+    font-size: 0.9375rem;
+    text-align: center;
+  }
+
+  .video-container .video-list-container .list {
+    flex-flow: column;
+    gap: 0.625rem;
+  }
+
+  .video-container .video-list-container .list .list-video {
+    width: 100%;
+  }
+
+  .video-container .video-list-container .list .list-title {
+    font-size: 0.9375rem;
+    text-align: center;
+  }
+}
+

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&family=Sen:wght@400;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+		/>
+		<link rel="stylesheet" href="../build/index.css" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<div class="navbar">
+			<div class="navbar-container">
+				<div class="logo-container">
+					<h1 class="logo">PepAkadémia</h1>
+				</div>
+				<div class="menu-container">
+					<ul class="menu-list">
+						<li class="menu-list__item">About</li>
+						<li class="menu-list__item">Lifedesign</li>
+						<li class="menu-list__item">Holistic health</li>
+						<li class="menu-list__item active">Earthpuzzle</li>
+					</ul>
+				</div>
+				<div class="profile-container">
+					<img
+						src="../img/profile.jpg"
+						alt=""
+						class="profile-picture"
+					/>
+					<div class="profile-text-container">
+						<span class="profile-text">Profile</span>
+						<i class="fas fa-caret-down"></i>
+					</div>
+					<div class="color-toggle">
+						<i class="fas fa-moon color-toggle__icon"></i>
+						<i class="fas fa-sun color-toggle__icon"></i>
+						<div class="color-toggle__ball"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<h2 class="area-title">Earthpuzzle</h2>
+
+		<div class="selection">
+			<div class="selection-container">
+				<div class="filter-wrapper">
+					<button class="filter-button" type="button">Filters</button>
+				</div>
+				<form class="search-form">
+					<input type="text" placeholder="Search" />
+				</form>
+			</div>
+			<div class="filter-container">
+				<div class="filter">
+					<label for="category">Category</label>
+					<div class="select">
+						<select id="category">
+							<option value="all">All</option>
+							<option value="new_classes">New Classes</option>
+							<option value="metamorphosis">Metamorphosis</option>
+							<option value="programs">Programs</option>
+							<option value="workshops">Workshops</option>
+						</select>
+					</div>
+				</div>
+				<div class="filter">
+					<label for="author">Author</label>
+					<div class="select">
+						<select name="author" id="author">
+							<option value="all">All</option>
+							<option value="petra">Petra</option>
+						</select>
+					</div>
+				</div>
+				<div class="filter">
+					<label for="intensity">Intensity</label>
+					<div class="select">
+						<select name="intensity" id="intensity">
+							<option value="all">All</option>
+							<option value="flaming_hot">Flaming Hot</option>
+							<option value="mild">Mild</option>
+							<option value="moderate">Moderate</option>
+							<option value="relaxing">Relaxing</option>
+							<option value="spicy">Spicy</option>
+						</select>
+					</div>
+				</div>
+				<div class="filter">
+					<label for="level">Level</label>
+					<div class="select">
+						<select name="level" id="level">
+							<option value="all">All</option>
+							<option value="beginner">Beginner</option>
+							<option value="intermediate">Intermediate</option>
+							<option value="advenced">Advenced</option>
+							<option value="for_all_level">
+								For All Levels
+							</option>
+						</select>
+					</div>
+				</div>
+				<div class="filter">
+					<label for="duration">Duration</label>
+					<div class="select">
+						<select name="duration" id="duration">
+							<option value="all">All</option>
+							<option value="10_to_20_mins">10 to 20 mins</option>
+							<option value="20_to_30_mins">20 to 30 mins</option>
+							<option value="30_to_45_mins">30 to 45 mins</option>
+							<option value="45_to_60_mins">45 to 60 mins</option>
+							<option value="60_to_90_mins">60 to 90 mins</option>
+							<option value="over_90_mins">Over 90 mins</option>
+							<option value="up_to_10_mins">Up to 10 mins</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="content-container">
+				<div class="movie-list-container">
+					<div class="movie-list-header">
+						<h2 class="movie-list-title">New Classes</h2>
+						<a class="movie-list-button" href="#">See All</a>
+					</div>
+					<div class="movie-list-wrapper">
+						<div
+							class="movie-list"
+							data-area="earthpuzzle"
+							data-directory="../"
+							data-category="new_classes"
+							data-link="single.html"
+						></div>
+						<i class="fas fa-chevron-right arrow"></i>
+					</div>
+				</div>
+
+				<div class="movie-list-container">
+					<div class="movie-list-header">
+						<h2 class="movie-list-title">Metamorphosis</h2>
+						<a class="movie-list-button" href="#">See All</a>
+					</div>
+					<div class="movie-list-wrapper">
+						<div
+							class="movie-list"
+							data-area="earthpuzzle"
+							data-directory="../"
+							data-category="metamorphosis"
+							data-link="single.html"
+						></div>
+						<i class="fas fa-chevron-right arrow"></i>
+					</div>
+				</div>
+
+				<div class="movie-list-container">
+					<div class="movie-list-header">
+						<h2 class="movie-list-title">Programs</h2>
+						<a class="movie-list-button" href="#">See All</a>
+					</div>
+					<div class="movie-list-wrapper">
+						<div
+							class="movie-list"
+							data-area="earthpuzzle"
+							data-directory="../"
+							data-category="programs"
+							data-link="single.html"
+						></div>
+						<i class="fas fa-chevron-right arrow"></i>
+					</div>
+				</div>
+
+				<div class="movie-list-container">
+					<div class="movie-list-header">
+						<h2 class="movie-list-title">Workshops</h2>
+						<a class="movie-list-button" href="#">See All</a>
+					</div>
+					<div class="movie-list-wrapper">
+						<div
+							class="movie-list"
+							data-area="earthpuzzle"
+							data-directory="../"
+							data-category="workshops"
+							data-link="single.html"
+						></div>
+						<i class="fas fa-chevron-right arrow"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="footer-container">
+				<div class="footer-content__grid">
+					<div>
+						<h6 class="footer-content__column">Footer Column 1</h6>
+						<p class="footer-content__text">
+							This is an example of a footer column.
+						</p>
+					</div>
+					<div>
+						<h6 class="footer-content__column">Footer Column 2</h6>
+						<p class="footer-content__text">
+							This is an example of a footer column.
+						</p>
+					</div>
+					<div>
+						<h6 class="footer-content__column">Footer Column 3</h6>
+						<p class="footer-content__text">
+							This is an example of a footer column.
+						</p>
+					</div>
+				</div>
+				<hr class="separator" />
+				<div class="footer-copyright-social">
+					<div>
+						<p class="footer-copyright">© All rights reserved.</p>
+					</div>
+					<div class="footer-social">
+						<a class="footer-social__item" href="#">
+							<i class="fab fa-instagram"></i>
+						</a>
+						<a class="footer-social__item" href="#">
+							<i class="fab fa-facebook-square"></i>
+						</a>
+						<a class="footer-social__item" href="#">
+							<i class="fab fa-tiktok"></i>
+						</a>
+						<a class="footer-social__item" href="#">
+							<i class="fab fa-youtube"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script src="../build/index.js"></script>
+	</body>
+</html>

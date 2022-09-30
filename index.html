@@ -3,7 +3,6 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./build/index.css" />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&family=Sen:wght@400;700;800&display=swap"
 			rel="stylesheet"
@@ -12,6 +11,7 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
 		/>
+		<link rel="stylesheet" href="./build/index.css" />
 		<title>Movie Design</title>
 	</head>
 
@@ -23,10 +23,10 @@
 				</div>
 				<div class="menu-container">
 					<ul class="menu-list">
-						<li class="menu-list__item active">Catalog</li>
-						<li class="menu-list__item">Gift Cards</li>
-						<li class="menu-list__item">Help</li>
-						<li class="menu-list__item">About</li>
+						<li class="menu-list__item active">About</li>
+						<li class="menu-list__item">Lifedesign</li>
+						<li class="menu-list__item">Holistic health</li>
+						<li class="menu-list__item">Earthpuzzle</li>
 					</ul>
 				</div>
 				<div class="profile-container">
@@ -58,6 +58,19 @@
 				</form>
 			</div>
 			<div class="filter-container">
+				<div class="filter">
+					<label for="area">Area</label>
+					<div class="select">
+						<select id="area">
+							<option value="all">All</option>
+							<option value="lifedesign">Lifedesign</option>
+							<option value="holistic_health">
+								Holistic health
+							</option>
+							<option value="earthpuzzle">Earthpuzzle</option>
+						</select>
+					</div>
+				</div>
 				<div class="filter">
 					<label for="category">Category</label>
 					<div class="select">
@@ -149,66 +162,58 @@
 				</div>
 
 				<div class="movie-list-container">
-					<h2 class="movie-list-title">New Classes</h2>
+					<div class="movie-list-header">
+						<h2 class="movie-list-title">Lifedesign</h2>
+						<a
+							class="movie-list-button"
+							href="./page/lifedesign.html"
+							>See All</a
+						>
+					</div>
 					<div class="movie-list-wrapper">
 						<div
 							class="movie-list"
-							data-categories="new_classes"
+							data-area="lifedesign"
+							data-link="
+							page/single.html"
 						></div>
 						<i class="fas fa-chevron-right arrow"></i>
 					</div>
 				</div>
 
 				<div class="movie-list-container">
-					<h2 class="movie-list-title">Metamorphosis</h2>
-					<div class="movie-list-wrapper">
-						<div
-							class="movie-list"
-							data-categories="metamorphosis"
-						></div>
-						<i class="fas fa-chevron-right arrow"></i>
+					<div class="movie-list-header">
+						<h2 class="movie-list-title">Holistic health</h2>
+						<a
+							class="movie-list-button"
+							href="./page/holistic_health.html"
+							>See All</a
+						>
 					</div>
-				</div>
-
-				<div
-					class="featured-content"
-					style="
-						background: linear-gradient(
-								to bottom,
-								rgba(0, 0, 0, 0),
-								#151515
-							),
-							url('./img/f-2.jpg');
-					"
-				>
-					<img src="./img/f-t-2.png" alt="" class="featured-title" />
-					<p class="featured-desc">
-						Lorem ipsum, dolor sit amet consectetur adipisicing
-						elit. Dolore voluptates nisi, quasi repellendus ducimus
-						eligendi quisquam consectetur quod voluptatum sed
-						dolorum expedita beatae earum alias est! Doloremque fuga
-						enim in!
-					</p>
-					<button class="featured-button">WATCH</button>
-				</div>
-
-				<div class="movie-list-container">
-					<h2 class="movie-list-title">Programs</h2>
 					<div class="movie-list-wrapper">
 						<div
 							class="movie-list"
-							data-categories="programs"
+							data-area="holistic_health"
+							data-link="page/single.html"
 						></div>
 						<i class="fas fa-chevron-right arrow"></i>
 					</div>
 				</div>
 
 				<div class="movie-list-container">
-					<h2 class="movie-list-title">Workshops</h2>
+					<div class="movie-list-header">
+						<h2 class="movie-list-title">Earthpuzzle</h2>
+						<a
+							class="movie-list-button"
+							href="./page/earthpuzzle.html"
+							>See All</a
+						>
+					</div>
 					<div class="movie-list-wrapper">
 						<div
 							class="movie-list"
-							data-categories="workshops"
+							data-area="earthpuzzle"
+							data-link="page/single.html"
 						></div>
 						<i class="fas fa-chevron-right arrow"></i>
 					</div>
