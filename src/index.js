@@ -1,11 +1,15 @@
+import Swiper, { Navigation } from 'swiper';
+import 'swiper/scss';
+import 'swiper/scss/navigation';
 import './index.scss';
 
-const arrows = document.querySelectorAll('.arrow');
-const movieLists = document.querySelectorAll('.movie-list');
+// const arrows = document.querySelectorAll('.arrow');
+// const movieLists = document.querySelectorAll('.movie-list');
 const courseLists = document.querySelectorAll('.movie-list');
 
 const mainVideo = document.querySelector('.main-video-container');
 const videoPlaylist = document.querySelector('.video-list-container');
+const sliders = document.querySelectorAll('.movie-list-wrapper');
 
 let courseData = [
 	{
@@ -859,10 +863,9 @@ courseLists.forEach((courseList) => {
 		if (area === item.area || area === '') {
 			if (category === item.category || category === '') {
 				let courseElement = `
-					<div class="movie-list__item">
+					<div class="swiper-slide movie-list__item">
 						<a href="${link}">
 							<img class="movie-list__item--img" src="${dir + item.src}" alt=""/>
-							<p class="movie-list__item--desc">${item.desc}</p>
 						</a>
 						<h2 class="movie-list__item--title">${item.title}</h2>
 					</div>
@@ -900,28 +903,28 @@ if (mainVideo && videoPlaylist) {
 	});
 }
 
-arrows.forEach((arrow, index) => {
-	const itemNumber = movieLists[index].querySelectorAll('img').length;
-	if (itemNumber <= Math.floor(window.innerWidth / 285)) {
-		arrow.style.display = 'none';
-	} else {
-		arrow.style.display = '';
-	}
-	let clickCounter = 0;
-	arrow.addEventListener('click', () => {
-		const ratio = Math.floor(window.innerWidth / 285);
-		clickCounter++;
-		if (itemNumber - (6 + clickCounter) + (6 - ratio) >= 0) {
-			movieLists[index].style.transform = `translateX(${
-				movieLists[index].computedStyleMap().get('transform')[0].x
-					.value - 315
-			}px)`;
-		} else {
-			movieLists[index].style.transform = `translateX(0)`;
-			clickCounter = 0;
-		}
-	});
-});
+// arrows.forEach((arrow, index) => {
+// 	const itemNumber = movieLists[index].querySelectorAll('img').length;
+// 	if (itemNumber <= Math.floor(window.innerWidth / 285)) {
+// 		arrow.style.display = 'none';
+// 	} else {
+// 		arrow.style.display = '';
+// 	}
+// 	let clickCounter = 0;
+// 	arrow.addEventListener('click', () => {
+// 		const ratio = Math.floor(window.innerWidth / 285);
+// 		clickCounter++;
+// 		if (itemNumber - (6 + clickCounter) + (6 - ratio) >= 0) {
+// 			movieLists[index].style.transform = `translateX(${
+// 				movieLists[index].computedStyleMap().get('transform')[0].x
+// 					.value - 315
+// 			}px)`;
+// 		} else {
+// 			movieLists[index].style.transform = `translateX(0)`;
+// 			clickCounter = 0;
+// 		}
+// 	});
+// });
 
 // Color Toggle
 
@@ -960,4 +963,36 @@ videoList.forEach((vid) => {
 			'.main-video-container .main-video-title'
 		).innerHTML = title;
 	};
+});
+
+sliders.forEach((slider, index) => {
+	slider.classList.add('movie-list-wrapper-' + index);
+	window['swiper' + index] = new Swiper('.movie-list-wrapper-' + index, {
+		loop: true,
+		grabCursor: true,
+		modules: [Navigation],
+		navigation: {
+			prevEl: '.swiper-button-prev',
+			nextEl: '.swiper-button-next',
+		},
+		autoheight: true,
+		breakpoints: {
+			600: {
+				slidesPerView: 2,
+				spaceBetween: 10,
+			},
+			935: {
+				slidesPerView: 3,
+				spaceBetween: 20,
+			},
+			1240: {
+				slidesPerView: 4,
+				spaceBetween: 20,
+			},
+			1910: {
+				slidesPerView: 6,
+				spaceBetween: 25,
+			},
+		},
+	});
 });
