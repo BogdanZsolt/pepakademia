@@ -884,6 +884,7 @@ if (mainVideo && videoPlaylist) {
 				src="${video.video}"
 				loop
 				controls
+				id="myVideo"
 				class="main-video"
 			></video>
 			<h3 class="main-video-title">${video.title}</h3>
@@ -902,29 +903,6 @@ if (mainVideo && videoPlaylist) {
 		videoPlaylist.innerHTML += videoElement;
 	});
 }
-
-// arrows.forEach((arrow, index) => {
-// 	const itemNumber = movieLists[index].querySelectorAll('img').length;
-// 	if (itemNumber <= Math.floor(window.innerWidth / 285)) {
-// 		arrow.style.display = 'none';
-// 	} else {
-// 		arrow.style.display = '';
-// 	}
-// 	let clickCounter = 0;
-// 	arrow.addEventListener('click', () => {
-// 		const ratio = Math.floor(window.innerWidth / 285);
-// 		clickCounter++;
-// 		if (itemNumber - (6 + clickCounter) + (6 - ratio) >= 0) {
-// 			movieLists[index].style.transform = `translateX(${
-// 				movieLists[index].computedStyleMap().get('transform')[0].x
-// 					.value - 315
-// 			}px)`;
-// 		} else {
-// 			movieLists[index].style.transform = `translateX(0)`;
-// 			clickCounter = 0;
-// 		}
-// 	});
-// });
 
 // Color Toggle
 
@@ -958,6 +936,7 @@ videoList.forEach((vid) => {
 		let src = vid.querySelector('.list-video').src;
 		let title = vid.querySelector('.list-title').innerHTML;
 		document.querySelector('.main-video-container .main-video').src = src;
+		console.log(document.getElementById('myVideo'));
 		document.querySelector('.main-video-container .main-video').play();
 		document.querySelector(
 			'.main-video-container .main-video-title'
