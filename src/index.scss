@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&family=Sen:wght@400;700;800&display=swap');
-
 :root {
   --ls-white: #f4f4f4;
   --ls-dark: #151515;
@@ -35,7 +33,6 @@ body {
     align-items: center;
     padding: 0 3.125rem;
     height: 100%;
-    font-family: "Sen", sans-serif;
     color: var(--ls-dark);
 
 
@@ -47,6 +44,7 @@ body {
 }
 
 .logo {
+  font-family: 'Pacifico', cursive;
   font-size: 1.875rem;
   color: #4dbf00;
 
