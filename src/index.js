@@ -908,7 +908,7 @@ if (mainVideo && videoPlaylist) {
 
 const ball = document.querySelector('.color-toggle');
 const items = document.querySelectorAll(
-	'.container, .movie-list-title, .navbar-container, .color-toggle__ball, .selection, .filter-button, .footer, .footer-content__text, .footer-copyright, .footer-social__item'
+	'.content-container, .movie-list-title, .header, .header .container, .color-toggle__ball, .selection, .filter-button, footer, .footer-content__text, .footer-copyright, .footer-social__item'
 );
 
 ball.addEventListener('click', () => {
@@ -919,10 +919,18 @@ ball.addEventListener('click', () => {
 });
 
 const filterButton = document.querySelector('.filter-button');
-const filterContainer = document.querySelector('.filter-container');
+const filterContainer = document.querySelector('#filter-container');
+
+console.log(filterContainer.classList.contains('hidden'));
 
 filterButton.onclick = () => {
-	filterContainer.classList.toggle('active');
+	if (filterContainer.classList.contains('hidden')) {
+		filterContainer.classList.remove('hidden');
+		filterContainer.classList.add('flex');
+	} else {
+		filterContainer.classList.remove('flex');
+		filterContainer.classList.add('hidden');
+	}
 };
 
 let videoList = document.querySelectorAll('.video-list-container .list');
